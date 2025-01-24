@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Успешное удаление заметки</title>
+</head>
+<body>
+<h1 th:text="'Заметка ' + ${name} + ' была удалена'"></h1>
+<a th:href="@{/notes}" >вернуться к заметкам </a>
+
+</body>
+</html>

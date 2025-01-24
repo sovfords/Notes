@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск пользователя</title>
+</head>
+<body>
+    <form action="#" th:action="@{/find}" method="post">
+      <label for="username"> <input type="text" value="пользователь" id="username" name="username" th:value="${name}"></label>
+    </form>
+    <p th:text="'Пользователь ' + ${user.nickname}"><a th:href="@{'/users/get/' + ${user.id}"></a> посмотреть профиль</p>
+    <a th:href="@{/main}"> Вернуться на главную страницу</a>
+</body>
+</html>

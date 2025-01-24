@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Успешное добавление заметки =)</title>
+</head>
+<body>
+    <h1>Поздравляю!</h1>
+    <p th:text="'Заметка ' + ${name} + ' была добавлена'"></p>
+    <a th:href="@{/notes}" >вернуться к заметкам </a>
+
+</body>
+</html>

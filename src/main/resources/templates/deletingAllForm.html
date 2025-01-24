@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Удаление всех заметок</title>
+</head>
+<body>
+<form action="#" th:action="@{/notes/delete/all}" th:object="${note}" method="post">
+
+
+  <p>Вы уверены, что хотите удалить все заметки?</p>
+
+  <div><input type="submit" value="да" /></div>
+  <a th:href="@{/notes}">нет, вернутся к заметкам</a>
+</form>
+
+</body>
+</html>

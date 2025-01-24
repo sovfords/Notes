@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Notes_Microservice
+  datasource:
+    url: jdbc:mariadb://localhost:3306/sov_service
+    username: root
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      format_sql: true
+server:
+  port: 8081

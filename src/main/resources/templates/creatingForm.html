@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление заметки</title>
+</head>
+<body>
+    <form action="#" th:action="@{/notes/create}" th:object="${note}" method="post">
+
+        <label for="name">Введите название заметки: <input type="text"  th:field="*{name}" id="name">  </label>
+        <p>Будет ли заметка общедоступной?</p>
+        <div><label for="isPublicT"> <input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicT" value="true" /> да</label></div>
+        <div><label for="isPublicF"><input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicF" value="false" checked /> нет </label></div>
+        <div><label for="text">Текст заметки: </label></div>
+        <p></p>
+        <div><input type="text" size="30" th:field="*{text}" id="text" /></div>
+        <div><input type="submit" value="готово" /></div>
+
+    </form>
+</body>
+</html>

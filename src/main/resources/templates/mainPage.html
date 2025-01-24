@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+        <h1 th:text="'Здравствуйте, ' + ${name} + '!'"></h1>
+
+        <h3>Заметки:</h3>
+        <a th:href="@{/notes}">Посмотреть все заметки</a>
+
+        <h3>Переписки:</h3>
+        <div><a>Начать новую переписку</a> </div>
+        <a>Все ваши переписки</a>
+
+
+        <h3>Профили:</h3>
+        <div><a>Редактировать свой профиль</a></div>
+        <a>Искать других пользователей</a>
+
+</body>
+</html>

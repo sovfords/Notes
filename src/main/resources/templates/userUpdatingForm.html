@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение параметров пользователя</title>
+</head>
+<body>
+        <form action="#" th:object="${user}" th:action="@{/users/update}" method="post">
+            <div> <label for="name" >Введите имя <input type="text" name="name" id="name" th:field="*{name}"> </label></div>
+            <div> <label for="age" >Введите возраст <input type="number" min="0" name="age" id="age" th:field="*{age}"> </label></div>
+            <div> <label for="infoAbout" >Введите информацию о себе <input type="text" name="infoAbout" id="infoAbout" th:field="*{informationAbout}"> </label></div>
+            <input type="submit" value="внести изменения">
+        </form>
+
+</body>
+</html>
