@@ -2,15 +2,19 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Неуспешное добавление пользователя</title>
+    <title>Добавление пользователя</title>
 </head>
 <body>
-    <h1 th:if="userIsAdd == true" th:text="'Ура! Пользователь ' + ${name} + ' был добавлен' " ></h1>
-    <div th:if="userIsAdd == false">
-        <h1  th:text="'Увы! Пользователь ' + ${name} + ' не был добавлен' " ></h1>
-        <a href="http://localhost:8081/registration" >  Попробовать снова </a>
-        <a href=""> Войти</a>
+    <div th:if="${userIsAdded} == true">
+        <h1  th:text="'Ура! Пользователь ' + ${name} + ' был добавлен' " ></h1>
+        <a th:href="@{/main}">Вернуться на главную страницу</a>
     </div>
+
+    <div th:if="${userIsAdded} == false">
+        <h1  th:text="'Увы! Пользователь ' + ${name} + ' не был добавлен' " ></h1>
+        <a th:href="@{/registration}" >  Попробовать снова </a>
+    </div>
+
 
 
 

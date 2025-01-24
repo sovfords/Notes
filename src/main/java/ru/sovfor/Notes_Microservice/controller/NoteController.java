@@ -44,7 +44,7 @@ public class NoteController {
     public String updateForm(@PathVariable Long id, Model model){
         num = id;
         model.addAttribute("note", noteService.getNoteById(id));
-        return "updatingForm";
+        return "updatingNoteForm";
     }
 
     @PostMapping("/update")
@@ -69,6 +69,12 @@ public class NoteController {
     public String getNoteById(@PathVariable long id, Model model){
         model.addAttribute("note",noteService.getNoteById(id));
         return "gettingNoteById";
+    }
+
+    @GetMapping("/public/get/{id}")
+    public String publicGetNoteById(@PathVariable long id, Model model){
+        model.addAttribute("note",noteService.getNoteById(id));
+        return "publicGettingNoteById";
     }
 
     @GetMapping("/delete/{id}")

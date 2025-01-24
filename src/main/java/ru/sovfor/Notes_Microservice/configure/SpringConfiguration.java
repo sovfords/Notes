@@ -34,7 +34,7 @@ public class SpringConfiguration
 
 
         http.authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/","/registration").permitAll()
+                        .requestMatchers("/main","/registration").permitAll()
 //                        .requestMatchers("/private-data").hasAnyRole("USER")
                         //.requestMatchers("/public-data").hasRole("USER")
                         .anyRequest().authenticated()
@@ -43,7 +43,8 @@ public class SpringConfiguration
 //                        .loginPage("/registration")
                         /*.permitAll()*/)
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/"));
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/main"));
 
         return http.build();
     }

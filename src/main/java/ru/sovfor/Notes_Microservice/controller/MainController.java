@@ -22,10 +22,6 @@ public class MainController {
     @Autowired
     UserService userService;
 
-//    @GetMapping()
-//    public String mainPage(){
-//        return "mainPage";
-//    }
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -36,7 +32,7 @@ public class MainController {
     @PostMapping("/registration")
     public String completeRegistration(@ModelAttribute User user, Model model){
         boolean userIsAdded = false;
-        if(userService.getUserByName(user.getNickname()) == null){
+        if(userService.getUserByName(user.getNickname()) == null && !user.getNickname().equals("anonymousUser") && !user.getNickname().isEmpty() && !user.getPassword().isEmpty()){
             userIsAdded = userService.saveUser(user);
         }
 
@@ -49,6 +45,8 @@ public class MainController {
     @GetMapping("/main")
     public String mainPage(Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        model.addAttribute("isAuthenticated", !authentication.getName().equals("anonymousUser"));
         model.addAttribute("name",authentication.getName());
         return "mainPage";
 

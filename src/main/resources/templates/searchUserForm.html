@@ -5,10 +5,10 @@
     <title>Поиск пользователя</title>
 </head>
 <body>
-    <form action="#" th:action="@{/find}" method="post">
-      <label for="username"> <input type="text" value="пользователь" id="username" name="username" th:value="${name}"></label>
+    <form action="#" th:action="@{/users/find}" method="post">
+        <label for="name">Введите имя пользователя <input type="text"  id="name" name="name" th:value="${name}"></label>
+        <input type="submit" value="поиск" >
     </form>
-    <p th:text="'Пользователь ' + ${user.nickname}"><a th:href="@{'/users/get/' + ${user.id}"></a> посмотреть профиль</p>
-    <a th:href="@{/main}"> Вернуться на главную страницу</a>
+
 </body>
 </html>

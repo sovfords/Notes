@@ -16,7 +16,7 @@
             <tr th:each="note:${notes}">
                 <td th:text="${note.name}"></td>
                 <td th:text="${note.dateOfCreating}"></td>
-                <td><a th:href="@{'/notes/get/' + ${note.id}}"> посмотреть </a>  </td>
+                <td><a th:href="@{'/notes/public/get/' + ${note.id}}"> посмотреть </a>  </td>
                 <td><a th:href="@{'/notes/update/' + ${note.id}}"> изменить </a>  </td>
                 <td><a th:href="@{'/notes/delete/' + ${note.id}}"> удалить </a>  </td>
             </tr>
@@ -24,7 +24,7 @@
         </table>
         <p th:if="${notesNotEmpty} == false"> Пока что у вас нет заметок... </p>
         <a th:href="@{/notes/create}" > создать новую заметку</a>
-        <a th:href="@{/notes/delete/all}" > удалить все заметки</a>
+        <a th:if="${notes.isEmpty()} == false" th:href="@{/notes/delete/all}" > удалить все заметки</a>
         <a th:href="@{/main}">вернуться на главную страницу</a>
 
 </body>

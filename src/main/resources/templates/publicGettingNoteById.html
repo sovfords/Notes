@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Заметка № ' + ${note.id}"></title>
+</head>
+<body>
+<h3 th:text="'Имя заметки ' + ${note.name}"></h3>
+<p th:text="'Дата создания ' + ${note.dateOfCreating}"></p>
+<p th:text="'Текст заметки: ' + ${note.text}"></p>
+
+<a th:href="@{/users/find}" >вернуться к поиску профиля </a>
+</body>
+</html>

@@ -2,6 +2,7 @@ package ru.sovfor.Notes_Microservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.sovfor.Notes_Microservice.domain.Note;
 import ru.sovfor.Notes_Microservice.domain.User;
 import ru.sovfor.Notes_Microservice.repository.NoteRepository;
@@ -37,7 +38,7 @@ public class NoteService {
         oldNote.setText(note.getText());
        return repository.save(oldNote);
     }
-
+    @Transactional
     public void deleteAllWithUserId(Long id){
         repository.deleteAllNotesWithUserId(id);
     }

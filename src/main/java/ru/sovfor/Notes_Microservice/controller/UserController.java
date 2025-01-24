@@ -64,14 +64,12 @@ public class UserController {
 
     @GetMapping("/find")
     public String searchUser(Model model){
-
+        model.addAttribute("name","");
         return "searchUserForm";
     }
     @PostMapping("/find")
     public String completeSearchUser(@RequestParam String name,Model model){
-
-
         model.addAttribute("user",userService.getUserByName(name));
-        return "searchUserForm";
+        return "resultOfSearchingUser";
     }
 }

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска пользователя</title>
+</head>
+<body>
+    <p th:text="'Пользователь ' + ${user.nickname}"> </p>
+    <a th:href="@{'/users/get/' + ${user.id}}">посмотреть профиль</a>
+    <a th:href="@{/main}"> Вернуться на главную страницу</a>
+</body>
+</html>

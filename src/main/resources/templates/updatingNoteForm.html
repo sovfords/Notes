@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Обновление заметки</title>
+</head>
+<body>
+<form action="#" th:action="@{/notes/update}" th:object="${note}" method="post">
+
+  <p>Измените те поля, которые вам нужно изменить, а остальные оставте без изменений</p>
+  <label for="name">Введите новое название заметки: <input type="text"  th:field="*{name}" id="name">  </label>
+  <p>Станет ли заметка общедоступной?</p>
+  <div th:if="${note.isPublic} == true">
+    <label for="isPublicT1"> <input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicT1" value="true" checked  /> да</label>
+    <label for="isPublicF1"><input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicF1" value="true" /> нет </label>
+    <label for="text">Новый текст заметки: </label>
+  </div>
+  <div th:if="${note.isPublic} == false">
+    <label for="isPublicT2"> <input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicT2" value="true"  /> да</label>
+    <label for="isPublicF2"><input type="radio" name="isPublic" th:field="*{isPublic}" id="isPublicF2" value="true" checked /> нет </label>
+    <label for="text">Новый текст заметки: </label>
+  </div>
+
+  <p></p>
+  <div><input type="text" size="30" th:field="*{text}" id="text" /></div>
+  <div><input type="submit" value="готово" /></div>
+
+</form>
+</body>
+</html>

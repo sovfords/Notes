@@ -5,9 +5,9 @@
     <title>Страница пользователя</title>
 </head>
 <body>
-    <h2 th:text="'Пользователь ' + ${user.name}"></h2>
-    <p th:text="'Возраст:' + ${user.age}"></p>
-    <p th:text="'Информация о себе' + ${user.informationAbout}"></p>
+    <h2 th:text="'Пользователь ' + ${user.nickname}"></h2>
+    <p th:text="'Возраст: ' + ${user.age}"></p>
+    <p th:text="'Информация о себе ' + ${user.informationAbout}"></p>
 
     <table th:if="${notesNotEmpty} == true">
         <tr>
@@ -17,7 +17,7 @@
             <!--                <th></th>-->
             <!--                <th></th>-->
         </tr>
-        <tr th:each="note:${notes}">
+        <tr th:each="note:${publicNotes}">
             <td th:text="${note.name}"></td>
             <td th:text="${note.dateOfCreating}"></td>
             <td><a th:href="@{'/notes/get/' + ${note.id}}"> посмотреть </a>  </td>
